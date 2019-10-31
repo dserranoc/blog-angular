@@ -1,0 +1,32 @@
+<div class="col-md-12 mt-3">
+
+        <h1>{{page_title}}</h1>
+        <p>Desde aquí puedes crear nuevas categorías para el blog.</p>
+    
+        <hr>
+    
+        <div class="alert alert-success col-md-5 mt-3" *ngIf="status == 'success'">
+            ¡Se ha creado correctamente la categoría!
+        </div>
+    
+        <div class="alert alert-danger col-md-5 mt-3" *ngIf="status == 'error'">
+            ¡No se ha podido crear la categoría!
+        </div>
+    
+        <!-- FORMULARIO DE CREAR CATEGORÍA -->
+    
+        <form #categoryForm="ngForm" (ngSubmit)="onSubmit(categoryForm)" class="col-md-5">
+            <div class="form-group">
+                <label for="name">Nombre</label><br>
+                <input type="text" name="name" #name="ngModel" [(ngModel)]="category.name" required>
+                <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block">El nombre de la categoría no es válido</small>
+
+            </div>
+            <input type="submit" value="Crear" class="btn btn-success" [disabled]="categoryForm.invalid">
+        </form>
+
+    
+    
+    
+    
+    </div>

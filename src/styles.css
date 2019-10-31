@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+.avatar_settings{
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.avatar_mask{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 900px;
+}
+
+.avatar_mask img{
+    width: 40px;
+    height: 40px;
+}
+
+.btn.up_btn.afu-attach-pin:hover{
+    cursor: pointer;
+}
+
+footer{
+    text-align: center;
+}
