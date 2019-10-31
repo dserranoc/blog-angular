@@ -23,15 +23,16 @@ export class AppComponent implements OnInit, DoCheck {
   ){
     this.loadUser();
     this.url = global.url;
+    this.getCategories();
 
   }
 
   ngOnInit(){
-    this.getCategories();
   }
 
   ngDoCheck(){
     this.loadUser();
+    // this.getCategories();
 
   }
 
