@@ -7,6 +7,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { CategoryNewComponent } from './components/category-new/category-new.component';
 import { PostNewComponent } from './components/post-new/post-new.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'settings', component: UserEditComponent},
   {path: 'create-category', component: CategoryNewComponent},
   {path: 'create-post', component: PostNewComponent},
+  {path: 'post/:id', component : PostDetailComponent},
   {path: '**', component: ErrorComponent}
 ];
 

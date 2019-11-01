@@ -7,7 +7,7 @@
     <div class="card-columns">
         <article class="card w-100" *ngFor="let post of posts">
             <div class="card-header">
-                <a [routerLink]="['/inicio']" routerLinkActive="router-link-active" >
+                <a [routerLink]="['/post', post.id]" routerLinkActive="router-link-active" >
                     <h3>{{post.title}}</h3>
                 </a>
             </div>
@@ -22,7 +22,7 @@
 
                 <!-- BOTONES DE ACCION -->
                     <div class="post-buttons mt-3">
-                        <a [routerLink]="['/home']" class="btn btn-success mr-2">Leer</a>
+                        <a [routerLink]="['/post', post.id]" class="btn btn-success mr-2">Leer</a>
                         <span *ngIf="identity && identity.sub == post.user_id">
                             <a [routerLink]="['/home']" class="btn btn-warning mr-2">Editar</a>
                             <a [routerLink]="['/home']" class="btn btn-danger">Borrar</a>

@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
             <label for="image">Imagen</label><br>
-            <angular-file-uploader [config]="afuConfig" [resetUpload]=resetVar (ApiResponse)="imageUpload($event)"></angular-file-uploader>
+            <angular-file-uploader [config]="afuConfig" (ApiResponse)="imageUpload($event)"></angular-file-uploader>
         </div>
 
         <input type="submit" value="Crear" class="btn btn-success" [disabled]="postForm.invalid">
