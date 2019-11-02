@@ -22,6 +22,10 @@ export class PostNewComponent implements OnInit {
   public post: Post;
   public status;
   public categories;
+  public froala_options: Object = {
+    charCounterCount: true,
+    language: 'es',
+  };
   public afuConfig = {
     multiple: false,
     formatsAllowed: ".jpg,.png,.gif,.jpeg",

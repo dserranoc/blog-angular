@@ -18,6 +18,12 @@ import { CategoryNewComponent } from './components/category-new/category-new.com
 import { PostNewComponent } from './components/post-new/post-new.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { PostEditComponent } from './components/post-edit/post-edit.component';
+import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
+
+import { IdentityGuard } from './services/identity.guard';
+import { UserService } from './services/user.service';
+import { ProfileComponent } from './components/profile/profile.component';
+import { PostListComponent } from './components/post-list/post-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,10 @@ import { PostEditComponent } from './components/post-edit/post-edit.component';
     CategoryNewComponent,
     PostNewComponent,
     PostDetailComponent,
-    PostEditComponent
+    PostEditComponent,
+    CategoryDetailComponent,
+    ProfileComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +50,7 @@ import { PostEditComponent } from './components/post-edit/post-edit.component';
     FroalaViewModule.forRoot(),
     AngularFileUploaderModule
   ],
-  providers: [],
+  providers: [IdentityGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

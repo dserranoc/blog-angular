@@ -21,7 +21,7 @@
           <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" *ngFor="let category of categories">
-          <a class="nav-link" href="#">{{category.name}}</a>
+          <a class="nav-link" [routerLink]="['/category', category.id]" routerLinkActive="router-link-active" >{{category.name}}</a>
         </li>
 
       </ul>
@@ -51,7 +51,7 @@
             <a class="dropdown-item" [routerLink]="['/create-post']" routerLinkActive="router-link-active" >Crear entrada</a>
             <a class="dropdown-item" [routerLink]="['/create-category']" routerLinkActive="router-link-active" >Crear categoría</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Mi perfil</a>
+            <a class="dropdown-item" [routerLink]="['/profile', identity.sub]" routerLinkActive="router-link-active" >Mi perfil</a>
             <a class="dropdown-item" [routerLink]="['/settings']" routerLinkActive="router-link-active" >Ajustes</a>
             <a class="dropdown-item" [routerLink]="['/logout/1']" routerLinkActive="router-link-active" >Salir</a>
           </div>

@@ -26,11 +26,11 @@ export class PostDetailComponent implements OnInit {
     // SACAR ID DEL POST
     this._route.params.subscribe(params=>{
       let id = +params['id'];
+      // PETICION AJAX DEL SERVICIO
       this._postService.getPost(id).subscribe(
         response=>{
           if(response.status == 'success'){
             this.post = response.post;
-            console.log(this.post);
           } else{
             this._router.navigate(['home']);
           }
@@ -40,7 +40,6 @@ export class PostDetailComponent implements OnInit {
         }
       );
     });
-    // PETICION AJAX DEL SERVICIO
   }
 
 }

@@ -1,0 +1,61 @@
+<div class="card-columns">
+        <article class="card w-100" *ngFor="let post of posts">
+            <div class="card-header">
+                <a [routerLink]="['/post', post.id]" routerLinkActive="router-link-active">
+                    <h3>{{post.title}}</h3>
+                </a>
+            </div>
+            <div class="card-body">
+                <!-- IMAGEN -->
+                <div class="post-image w-100" *ngIf="post.image">
+                    <img src="{{url+'post/image/'+post.image}}" class="w-100">
+                </div>
+                <div class="post-image w-100" *ngIf="!post.image">
+                    <img src="assets/img/placeholder.jpg" class="w-100">
+                </div>
+
+                <!-- BOTONES DE ACCION -->
+                <div class="post-buttons mt-3">
+                    <a [routerLink]="['/post', post.id]" class="btn btn-success mr-2">Leer</a>
+                    <span *ngIf="identity && identity.sub == post.user_id">
+                        <a [routerLink]="['/edit-post', post.id]" class="btn btn-warning mr-2">Editar</a>
+
+
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                            [attr.data-target]="'#Modal' +post.id">
+                            Borrar
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal{{post.id}}" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">¿Seguro que quieres borrar esta
+                                            entrada?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ¡ATENCIÓN! Estas a punto de borrar una entrada del blog. Una vez le des a "Si"
+                                        no podrás recuperar dicha entrada.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                        <a (click)="deletePost(post.id)" data-dismiss="modal"
+                                            class="btn btn-danger">Borrar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </span>
+                </div>
+            </div>
+        </article>
+    </div>

@@ -12,9 +12,21 @@
     border-radius: 900px;
 }
 
+
 .avatar_mask img{
     width: 40px;
     height: 40px;
+}
+
+.avatar_mask_profile{
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 900px;
+}
+.avatar_mask_profile img{
+    width: 90px;
+    height: 90px;
 }
 
 .btn.up_btn.afu-attach-pin:hover{

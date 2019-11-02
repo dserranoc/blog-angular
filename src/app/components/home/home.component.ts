@@ -28,12 +28,12 @@ export class HomeComponent implements OnInit {
   ) {
     this.page_title = "Inicio";
     this.url = global.url;
+    this.identity = this._userService.getIdentity();
+    this.token = this._userService.getToken();
    }
 
   ngOnInit() {
     this.getPosts();
-    this.identity = this._userService.getIdentity();
-    this.token = this._userService.getToken();
   }
 
   getPosts(){
@@ -47,6 +47,19 @@ export class HomeComponent implements OnInit {
         console.log(<any>error);
       }
     );
+  }
+  deletePost(id){
+    this._postService.delete(this.token, id).subscribe(
+      response =>{
+        if(response.status == 'success'){
+          this.getPosts();
+        }
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    );
+
   }
 
 }
